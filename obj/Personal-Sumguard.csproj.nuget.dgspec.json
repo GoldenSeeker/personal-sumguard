@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\personal-sumguard\\Personal-Sumguard.csproj": {}
+    "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\personal-sumguard\\Personal-Sumguard.csproj": {
+    "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\personal-sumguard\\Personal-Sumguard.csproj",
+        "projectUniqueName": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj",
         "projectName": "Personal-Sumguard",
-        "projectPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\personal-sumguard\\Personal-Sumguard.csproj",
+        "projectPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj",
         "packagesPath": "C:\\Users\\Adeye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\personal-sumguard\\obj\\",
+        "outputPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Adeye\\AppData\\Roaming\\NuGet\\NuGet.Config",

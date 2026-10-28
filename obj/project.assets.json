@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard\\Personal-Sumguard.csproj",
+      "projectUniqueName": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj",
       "projectName": "Personal-Sumguard",
-      "projectPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard\\Personal-Sumguard.csproj",
+      "projectPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj",
       "packagesPath": "C:\\Users\\Adeye\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard\\obj\\",
+      "outputPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Adeye\\AppData\\Roaming\\NuGet\\NuGet.Config",
