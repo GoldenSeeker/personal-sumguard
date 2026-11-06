@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Personal-Sumguard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+244566f2c00ac914c74a362f38c2acc075f7df11")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+239a713ab94539113178b1d0f5c855969197c4ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("Personal-Sumguard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Personal-Sumguard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

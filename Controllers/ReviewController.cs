@@ -9,26 +9,25 @@ namespace Personal_Sumguard.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        // ASP.NET Core automatically injects the database context
         public ReviewController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: /Review/Index — list all drafts
+        // list all drafts
         public async Task<IActionResult> Index()
         {
             var drafts = await _context.ReviewDrafts.ToListAsync();
             return View(drafts);
         }
 
-        // GET: /Review/CreateDraft — show the empty form
+        // show the empty form
         public IActionResult CreateDraft()
         {
             return View();
         }
 
-        // POST: /Review/CreateDraft — save the submitted form
+        // save the submitted form
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateDraft(ReviewDraft draft)
