@@ -17,6 +17,34 @@ namespace Personal_Sumguard.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.14");
 
+            modelBuilder.Entity("Personal_Sumguard.Models.RecallRecord", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("RecallDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RecallNumber")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RecallRecords");
+                });
+
             modelBuilder.Entity("Personal_Sumguard.Models.ReviewDraft", b =>
                 {
                     b.Property<int>("Id")
@@ -33,6 +61,9 @@ namespace Personal_Sumguard.Migrations
                     b.Property<bool>("IsShared")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("RecallRecordId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -40,7 +71,18 @@ namespace Personal_Sumguard.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("RecallRecordId");
+
                     b.ToTable("ReviewDrafts");
+                });
+
+            modelBuilder.Entity("Personal_Sumguard.Models.ReviewDraft", b =>
+                {
+                    b.HasOne("Personal_Sumguard.Models.RecallRecord", "RecallRecord")
+                        .WithMany()
+                        .HasForeignKey("RecallRecordId");
+
+                    b.Navigation("RecallRecord");
                 });
 #pragma warning restore 612, 618
         }

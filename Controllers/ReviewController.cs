@@ -40,5 +40,34 @@ namespace Personal_Sumguard.Controllers
             }
             return View(draft);
         }
+                // GET: /Review/AttachRecord/5 — show the attach form for draft #5
+        public async Task<IActionResult> AttachRecord(int id)
+        {
+            var draft = await _context.ReviewDrafts.FindAsync(id);
+            if (draft == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.RecallRecords = await _context.RecallRecords.ToListAsync();
+            return View(draft);
+        }
+
+        // POST: /Review/AttachRecord/5 — save the chosen recall record
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AttachRecord(int id, int recallRecordId)
+        {
+            var draft = await _context.ReviewDrafts.FindAsync(id);
+            if (draft == null)
+            {
+                return NotFound();
+            }
+
+            draft.RecallRecordId = recallRecordId;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

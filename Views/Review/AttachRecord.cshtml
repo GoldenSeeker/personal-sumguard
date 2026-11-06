@@ -1,0 +1,34 @@
+@model Personal_Sumguard.Models.ReviewDraft
+
+@{
+    ViewData["Title"] = "Attach Recall Record";
+    var records = ViewBag.RecallRecords as List<Personal_Sumguard.Models.RecallRecord>;
+}
+
+<h2>Attach Recall Record to "@Model.Title"</h2>
+
+@if (records == null || !records.Any())
+{
+    <div class="alert alert-warning">
+        No recall records exist yet. You need at least one to attach.
+    </div>
+}
+else
+{
+    <form asp-action="AttachRecord" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+
+        <div class="form-group mb-3">
+            <label class="form-label">Select a recall record</label>
+            <select name="recallRecordId" class="form-control">
+                @foreach (var record in records)
+                {
+                    <option value="@record.Id">@record.RecallNumber — @record.ProductName</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Attach</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+}
