@@ -1,0 +1,38 @@
+@model IEnumerable<Personal_Sumguard.Models.ReviewDraft>
+
+@{
+    ViewData["Title"] = "Review Drafts";
+}
+
+<h2>Review Drafts</h2>
+
+<p>
+    <a asp-action="CreateDraft" class="btn btn-success">Create New Draft</a>
+</p>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">No drafts yet. Click "Create New Draft" to get started.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Created At</th>
+                <th>Shared</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var draft in Model)
+            {
+                <tr>
+                    <td>@draft.Title</td>
+                    <td>@draft.CreatedAt.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>@(draft.IsShared ? "Yes" : "No")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
