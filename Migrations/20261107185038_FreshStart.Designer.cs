@@ -11,8 +11,8 @@ using Personal_Sumguard.Data;
 namespace Personal_Sumguard.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20261106163626_AddRecallRecords")]
-    partial class AddRecallRecords
+    [Migration("20261107185038_FreshStart")]
+    partial class FreshStart
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,6 +79,30 @@ namespace Personal_Sumguard.Migrations
                     b.ToTable("ReviewDrafts");
                 });
 
+            modelBuilder.Entity("Personal_Sumguard.Models.ReviewShare", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CustomerEmail")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ReviewDraftId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("SharedAt")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReviewDraftId");
+
+                    b.ToTable("ReviewShares");
+                });
+
             modelBuilder.Entity("Personal_Sumguard.Models.ReviewDraft", b =>
                 {
                     b.HasOne("Personal_Sumguard.Models.RecallRecord", "RecallRecord")
@@ -86,6 +110,22 @@ namespace Personal_Sumguard.Migrations
                         .HasForeignKey("RecallRecordId");
 
                     b.Navigation("RecallRecord");
+                });
+
+            modelBuilder.Entity("Personal_Sumguard.Models.ReviewShare", b =>
+                {
+                    b.HasOne("Personal_Sumguard.Models.ReviewDraft", "ReviewDraft")
+                        .WithMany("Shares")
+                        .HasForeignKey("ReviewDraftId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ReviewDraft");
+                });
+
+            modelBuilder.Entity("Personal_Sumguard.Models.ReviewDraft", b =>
+                {
+                    b.Navigation("Shares");
                 });
 #pragma warning restore 612, 618
         }

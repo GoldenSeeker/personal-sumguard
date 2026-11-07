@@ -25,5 +25,6 @@ namespace Personal_Sumguard.Models
         public int? RecallRecordId { get; set; }
 
         public RecallRecord? RecallRecord { get; set; }
+        public List<ReviewShare> Shares { get; set; } = new();
     }
 }

@@ -35,7 +35,9 @@ else
                     <td>@(draft.IsShared ? "Yes" : "No")</td>
                     <td>@(draft.RecallRecord?.RecallNumber ?? "—")</td>
                     <td>
-                        <a asp-action="AttachRecord" asp-route-id="@draft.Id" class="btn btn-sm btn-outline-primary">Attach Record</a>
+                        <a asp-action="AttachRecord" asp-route-id="@draft.Id" class="btn btn-sm btn-outline-primary">Attach</a>
+                        <a asp-action="ShareReview" asp-route-id="@draft.Id" class="btn btn-sm btn-outline-success">Share</a>
+                        <a asp-action="ExportSummary" asp-route-id="@draft.Id" class="btn btn-sm btn-outline-secondary">Export</a>
                     </td>
                 </tr>
             }

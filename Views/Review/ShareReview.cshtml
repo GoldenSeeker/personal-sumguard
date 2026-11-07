@@ -1,0 +1,34 @@
+@model Personal_Sumguard.Models.ReviewDraft
+
+@{
+    ViewData["Title"] = "Share Review";
+}
+
+<h2>Share "@Model.Title"</h2>
+
+<form asp-action="ShareReview" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group mb-3">
+        <label class="form-label">Customer Email</label>
+        <input name="customerEmail" type="email" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Share</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+
+<hr />
+
+<h4>Already Shared With</h4>
+@if (Model.Shares.Any())
+{
+    <ul>
+        @foreach (var share in Model.Shares)
+        {
+            <li>@share.CustomerEmail — @share.SharedAt.ToString("yyyy-MM-dd HH:mm")</li>
+        }
+    </ul>
+}
+else
+{
+    <p class="text-muted">Not yet shared with anyone.</p>
+}
