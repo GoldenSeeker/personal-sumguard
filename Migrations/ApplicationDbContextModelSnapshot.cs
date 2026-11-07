@@ -17,6 +17,35 @@ namespace Personal_Sumguard.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.14");
 
+            modelBuilder.Entity("Personal_Sumguard.Models.CustomerComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CustomerEmail")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("PostedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("ReviewDraftId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ReviewDraftId");
+
+                    b.ToTable("CustomerComments");
+                });
+
             modelBuilder.Entity("Personal_Sumguard.Models.RecallRecord", b =>
                 {
                     b.Property<int>("Id")
@@ -100,6 +129,17 @@ namespace Personal_Sumguard.Migrations
                     b.ToTable("ReviewShares");
                 });
 
+            modelBuilder.Entity("Personal_Sumguard.Models.CustomerComment", b =>
+                {
+                    b.HasOne("Personal_Sumguard.Models.ReviewDraft", "ReviewDraft")
+                        .WithMany("Comments")
+                        .HasForeignKey("ReviewDraftId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ReviewDraft");
+                });
+
             modelBuilder.Entity("Personal_Sumguard.Models.ReviewDraft", b =>
                 {
                     b.HasOne("Personal_Sumguard.Models.RecallRecord", "RecallRecord")
@@ -122,6 +162,8 @@ namespace Personal_Sumguard.Migrations
 
             modelBuilder.Entity("Personal_Sumguard.Models.ReviewDraft", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Shares");
                 });
 #pragma warning restore 612, 618

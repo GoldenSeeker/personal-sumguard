@@ -1,0 +1,41 @@
+@model IEnumerable<Personal_Sumguard.Models.ReviewDraft>
+
+@{
+    ViewData["Title"] = "My Reviews";
+    var email = ViewBag.Email as string;
+}
+
+<h2>Reviews shared with @email</h2>
+
+@if (!Model.Any())
+{
+    <p class="text-muted">No reviews have been shared with this email yet.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Recall</th>
+                <th>Product</th>
+                <th>Comments</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var draft in Model)
+            {
+                <tr>
+                    <td>@draft.Title</td>
+                    <td>@(draft.RecallRecord?.RecallNumber ?? "—")</td>
+                    <td>@(draft.RecallRecord?.ProductName ?? "—")</td>
+                    <td>@draft.Comments.Count</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@draft.Id" asp-route-email="@email" class="btn btn-sm btn-outline-primary">View</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

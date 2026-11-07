@@ -13,5 +13,6 @@ namespace Personal_Sumguard.Data
         public DbSet<ReviewDraft> ReviewDrafts { get; set; }
         public DbSet<RecallRecord> RecallRecords { get; set; }
         public DbSet<ReviewShare> ReviewShares { get; set; }
+        public DbSet<CustomerComment> CustomerComments { get; set; }
     }
 }

@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Customer Portal";
+}
+
+<h2>Customer Portal</h2>
+
+<p>Enter the email address your review was shared with:</p>
+
+<form method="get" asp-action="Index">
+    <div class="form-group mb-3">
+        <input name="email" type="email" class="form-control" placeholder="you@example.com" required />
+    </div>
+    <button type="submit" class="btn btn-primary">View My Reviews</button>
+</form>

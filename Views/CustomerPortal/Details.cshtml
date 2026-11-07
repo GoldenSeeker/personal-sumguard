@@ -1,0 +1,58 @@
+@model Personal_Sumguard.Models.ReviewDraft
+
+@{
+    ViewData["Title"] = "Review Details";
+    var email = ViewBag.Email as string;
+}
+
+<h2>@Model.Title</h2>
+<p class="text-muted">Created @Model.CreatedAt.ToString("yyyy-MM-dd HH:mm")</p>
+
+@if (Model.RecallRecord != null)
+{
+    <div class="alert alert-info">
+        <strong>Recall:</strong> @Model.RecallRecord.RecallNumber — @Model.RecallRecord.ProductName<br />
+        @Model.RecallRecord.Description
+    </div>
+}
+
+<h4>Review Content</h4>
+<p style="white-space: pre-wrap;">@Model.Content</p>
+
+<hr />
+
+<h4>Comments</h4>
+@if (Model.Comments.Any())
+{
+    <ul class="list-group mb-3">
+        @foreach (var comment in Model.Comments.OrderBy(c => c.PostedAt))
+        {
+            <li class="list-group-item">
+                <strong>@comment.CustomerEmail</strong>
+                <span class="text-muted"> — @comment.PostedAt.ToString("yyyy-MM-dd HH:mm")</span>
+                <div>@comment.Text</div>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p class="text-muted">No comments yet.</p>
+}
+
+<h5>Add a Comment</h5>
+<form asp-action="AddComment" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="hidden" name="email" value="@email" />
+    <div class="form-group mb-3">
+        <textarea name="text" class="form-control" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Post Comment</button>
+</form>
+
+<hr />
+
+<a asp-action="ExportDocumentation" asp-route-id="@Model.Id" asp-route-email="@email" class="btn btn-outline-secondary">
+    Download Final Documentation
+</a>
+<a asp-action="Index" asp-route-email="@email" class="btn btn-secondary">Back to My Reviews</a>
