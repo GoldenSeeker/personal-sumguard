@@ -46,6 +46,36 @@ namespace Personal_Sumguard.Migrations
                     b.ToTable("CustomerComments");
                 });
 
+            modelBuilder.Entity("Personal_Sumguard.Models.InvitationToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("ExpiresAt")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsUsed")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InvitationTokens");
+                });
+
             modelBuilder.Entity("Personal_Sumguard.Models.Notification", b =>
                 {
                     b.Property<int>("Id")
@@ -103,6 +133,35 @@ namespace Personal_Sumguard.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RecallRecords");
+                });
+
+            modelBuilder.Entity("Personal_Sumguard.Models.RegisteredUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("RegisteredAt")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RegisteredUsers");
                 });
 
             modelBuilder.Entity("Personal_Sumguard.Models.ReviewDraft", b =>

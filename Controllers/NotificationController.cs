@@ -69,5 +69,45 @@ namespace Personal_Sumguard.Controllers
             });
             // Caller is responsible for SaveChangesAsync
         }
+                // GET: /Notification/Invite — show a form to enter an email
+        public IActionResult Invite()
+        {
+            return View();
+        }
+
+        // POST: /Notification/Invite — generate a token and show the invite link
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Invite(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                ModelState.AddModelError("email", "Email is required.");
+                return View();
+            }
+
+            // Generate a secure random token
+            var token = Guid.NewGuid().ToString("N");
+
+            _context.InvitationTokens.Add(new InvitationToken
+            {
+                Email = email.Trim(),
+                Token = token,
+                CreatedAt = DateTime.Now,
+                ExpiresAt = DateTime.Now.AddDays(7)
+            });
+            await _context.SaveChangesAsync();
+
+            // Build the full invite link
+            var link = Url.Action(
+                "Register",
+                "Account",
+                new { token },
+                Request.Scheme);
+
+            ViewBag.Email = email;
+            ViewBag.Link = link;
+            return View("InviteResult");
+        }
     }
 }

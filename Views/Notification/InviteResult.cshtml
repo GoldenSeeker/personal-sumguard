@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Invitation Generated";
+    var email = ViewBag.Email as string;
+    var link = ViewBag.Link as string;
+}
+
+<h2>Invitation Generated</h2>
+
+<p>Send this link to <strong>@email</strong>:</p>
+
+<div class="alert alert-info">
+    <code style="word-break: break-all;">@link</code>
+</div>
+
+<p class="text-muted">The link expires 7 days from now and can only be used once.</p>
+
+<a asp-action="Index" class="btn btn-secondary">Back to Notifications</a>
+<a asp-action="Invite" class="btn btn-primary">Invite Another</a>
