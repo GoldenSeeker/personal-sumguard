@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Invite a Customer";
+}
+
+<h2>Invite a Customer</h2>
+
+<p>Enter the email address of the customer you want to invite.</p>
+
+<form asp-action="Invite" method="post">
+    <div class="form-group mb-3">
+        <label class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" required />
+        @Html.ValidationMessage("email", new { @class = "text-danger" })
+    </div>
+    <button type="submit" class="btn btn-primary">Generate Invitation</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
