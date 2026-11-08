@@ -1,0 +1,49 @@
+@model IEnumerable<Personal_Sumguard.Models.Notification>
+
+@{
+    ViewData["Title"] = "Notifications";
+    var unreadCount = Model.Count(n => !n.IsRead);
+}
+
+<h2>Notifications</h2>
+
+@if (unreadCount > 0)
+{
+    <form asp-action="MarkAllRead" method="post" class="mb-3">
+        <button type="submit" class="btn btn-sm btn-outline-secondary">Mark all as read (@unreadCount unread)</button>
+    </form>
+}
+
+@if (!Model.Any())
+{
+    <p class="text-muted">No notifications yet.</p>
+}
+else
+{
+    <ul class="list-group">
+        @foreach (var n in Model)
+        {
+            <li class="list-group-item @(n.IsRead ? "" : "list-group-item-info")">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        @if (!string.IsNullOrEmpty(n.Link))
+                        {
+                            <a href="@n.Link">@n.Message</a>
+                        }
+                        else
+                        {
+                            @n.Message
+                        }
+                        <div class="text-muted small">@n.CreatedAt.ToString("yyyy-MM-dd HH:mm")</div>
+                    </div>
+                    @if (!n.IsRead)
+                    {
+                        <form asp-action="MarkRead" asp-route-id="@n.Id" method="post">
+                            <button type="submit" class="btn btn-sm btn-outline-primary">Mark read</button>
+                        </form>
+                    }
+                </div>
+            </li>
+        }
+    </ul>
+}

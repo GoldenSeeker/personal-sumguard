@@ -71,6 +71,11 @@ namespace Personal_Sumguard.Controllers
                 Text = text.Trim(),
                 PostedAt = DateTime.Now
             });
+                        NotificationController.Notify(
+                _context,
+                $"New comment from {email} on review #{id}",
+                Url.Action("Details", "Review", new { id }));
+                
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Details), new { id, email });
