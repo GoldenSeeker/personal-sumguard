@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Personal_Sumguard.Data;
@@ -5,21 +7,34 @@ using Personal_Sumguard.Models;
 
 namespace Personal_Sumguard.Controllers
 {
+    [Authorize]
     public class CustomerPortalController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CustomerPortalController(ApplicationDbContext context)
+        public CustomerPortalController(
+            ApplicationDbContext context,
+            UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        // GET: /CustomerPortal?email=test@example.com
-        public async Task<IActionResult> Index(string email)
+        // Helper: the email of the currently logged-in user
+        private async Task<string?> GetCurrentEmailAsync()
         {
-            if (string.IsNullOrWhiteSpace(email))
+            var user = await _userManager.GetUserAsync(User);
+            return user?.Email;
+        }
+
+        // GET: /CustomerPortal
+        public async Task<IActionResult> Index()
+        {
+            var email = await GetCurrentEmailAsync();
+            if (string.IsNullOrEmpty(email))
             {
-                return View("EnterEmail");
+                return Forbid();
             }
 
             var sharedDrafts = await _context.ReviewDrafts
@@ -32,14 +47,16 @@ namespace Personal_Sumguard.Controllers
             return View(sharedDrafts);
         }
 
-        // GET: /CustomerPortal/Details/5?email=test@example.com
-        public async Task<IActionResult> Details(int id, string email)
+        // GET: /CustomerPortal/Details/5
+        public async Task<IActionResult> Details(int id)
         {
+            var email = await GetCurrentEmailAsync();
+            if (string.IsNullOrEmpty(email)) return Forbid();
+
             var draft = await _context.ReviewDrafts
                 .Include(d => d.RecallRecord)
                 .Include(d => d.Comments)
                 .FirstOrDefaultAsync(d => d.Id == id);
-
             if (draft == null) return NotFound();
 
             var isShared = await _context.ReviewShares
@@ -53,11 +70,14 @@ namespace Personal_Sumguard.Controllers
         // POST: /CustomerPortal/AddComment
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddComment(int id, string email, string text)
+        public async Task<IActionResult> AddComment(int id, string text)
         {
+            var email = await GetCurrentEmailAsync();
+            if (string.IsNullOrEmpty(email)) return Forbid();
+
             if (string.IsNullOrWhiteSpace(text))
             {
-                return RedirectToAction(nameof(Details), new { id, email });
+                return RedirectToAction(nameof(Details), new { id });
             }
 
             var isShared = await _context.ReviewShares
@@ -71,24 +91,27 @@ namespace Personal_Sumguard.Controllers
                 Text = text.Trim(),
                 PostedAt = DateTime.Now
             });
-                        NotificationController.Notify(
+
+            NotificationController.Notify(
                 _context,
                 $"New comment from {email} on review #{id}",
                 Url.Action("Details", "Review", new { id }));
-                
+
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Details), new { id, email });
+            return RedirectToAction(nameof(Details), new { id });
         }
 
-        // GET: /CustomerPortal/ExportDocumentation/5?email=test@example.com
-        public async Task<IActionResult> ExportDocumentation(int id, string email)
+        // GET: /CustomerPortal/ExportDocumentation/5
+        public async Task<IActionResult> ExportDocumentation(int id)
         {
+            var email = await GetCurrentEmailAsync();
+            if (string.IsNullOrEmpty(email)) return Forbid();
+
             var draft = await _context.ReviewDrafts
                 .Include(d => d.RecallRecord)
                 .Include(d => d.Comments)
                 .FirstOrDefaultAsync(d => d.Id == id);
-
             if (draft == null) return NotFound();
 
             var isShared = await _context.ReviewShares

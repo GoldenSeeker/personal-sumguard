@@ -43,7 +43,6 @@ else
 <h5>Add a Comment</h5>
 <form asp-action="AddComment" method="post">
     <input type="hidden" name="id" value="@Model.Id" />
-    <input type="hidden" name="email" value="@email" />
     <div class="form-group mb-3">
         <textarea name="text" class="form-control" rows="3" required></textarea>
     </div>
@@ -52,7 +51,7 @@ else
 
 <hr />
 
-<a asp-action="ExportDocumentation" asp-route-id="@Model.Id" asp-route-email="@email" class="btn btn-outline-secondary">
+<a asp-action="ExportDocumentation" asp-route-id="@Model.Id" class="btn btn-outline-secondary">
     Download Final Documentation
 </a>
-<a asp-action="Index" asp-route-email="@email" class="btn btn-secondary">Back to My Reviews</a>
+<a asp-action="Index" class="btn btn-secondary">Back to My Reviews</a>

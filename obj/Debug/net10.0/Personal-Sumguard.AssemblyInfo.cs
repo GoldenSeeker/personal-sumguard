@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Personal-Sumguard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1780cb085ab6d5782c87d5a82f7b1a902f31a93")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7863fa9e9d01a89a541465b472f043d6eefe980e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Personal-Sumguard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Personal-Sumguard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

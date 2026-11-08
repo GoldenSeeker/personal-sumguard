@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Personal_Sumguard.Data;
@@ -5,6 +6,7 @@ using Personal_Sumguard.Models;
 
 namespace Personal_Sumguard.Controllers
 {
+    [Authorize] 
     public class ReviewController : Controller
     {
         private readonly ApplicationDbContext _context;

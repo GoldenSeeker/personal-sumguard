@@ -32,7 +32,7 @@ else
                     <td>@(draft.RecallRecord?.ProductName ?? "—")</td>
                     <td>@draft.Comments.Count</td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@draft.Id" asp-route-email="@email" class="btn btn-sm btn-outline-primary">View</a>
+                                                <a asp-action="Details" asp-route-id="@draft.Id" class="btn btn-sm btn-outline-primary">View</a>
                     </td>
                 </tr>
             }
