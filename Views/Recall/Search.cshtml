@@ -1,0 +1,67 @@
+@model Personal_Sumguard.Models.SearchFilterModel
+
+@{
+    ViewData["Title"] = "Recall Search";
+}
+
+<h2>Recall Search</h2>
+
+<form method="get" asp-action="Search" class="card p-3 mb-4">
+    <div class="row g-3">
+        <div class="col-md-4">
+            <label asp-for="Keyword" class="form-label"></label>
+            <input asp-for="Keyword" class="form-control" placeholder="Recall number or product" />
+        </div>
+        <div class="col-md-4">
+            <label asp-for="ProductName" class="form-label"></label>
+            <input asp-for="ProductName" class="form-control" placeholder="e.g. blender" />
+        </div>
+        <div class="col-md-2">
+            <label asp-for="FromDate" class="form-label"></label>
+            <input asp-for="FromDate" type="date" class="form-control" />
+        </div>
+        <div class="col-md-2">
+            <label asp-for="ToDate" class="form-label"></label>
+            <input asp-for="ToDate" type="date" class="form-control" />
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Search</button>
+        <a asp-action="Search" class="btn btn-secondary">Reset</a>
+    </div>
+</form>
+
+@if (Model.HasSearched)
+{
+    <p class="text-muted">Found <strong>@Model.Results.Count</strong> matching recall record(s).</p>
+
+    @if (Model.Results.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Recall Number</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model.Results)
+                {
+                    <tr>
+                        <td>@record.RecallNumber</td>
+                        <td>@record.ProductName</td>
+                        <td>@record.RecallDate.ToString("yyyy-MM-dd")</td>
+                        <td>@record.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-muted">No matches. Try a different keyword or wider date range.</p>
+    }
+}
