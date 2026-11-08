@@ -1,0 +1,66 @@
+@model Dictionary<string, List<string>>
+
+@{
+    ViewData["Title"] = "Admin — Roles";
+}
+
+<h2>Role Management</h2>
+
+@if (TempData["RoleResult"] != null)
+{
+    <div class="alert alert-info">@TempData["RoleResult"]</div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Role</th>
+            <th>Members</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entry in Model)
+        {
+            <tr>
+                <td>@entry.Key</td>
+                <td>
+                    @if (entry.Value.Any())
+                    {
+                        @string.Join(", ", entry.Value)
+                    }
+                    else
+                    {
+                        <span class="text-muted">(none)</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+
+<h4>Create a Role</h4>
+<form asp-action="CreateRole" method="post" class="mb-4">
+    <div class="input-group" style="max-width: 400px;">
+        <input name="roleName" class="form-control" placeholder="Role name" required />
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+
+<h4>Assign a User to a Role</h4>
+<form asp-action="AssignRole" method="post" class="mb-4">
+    <div class="row g-2" style="max-width: 600px;">
+        <div class="col-md-5">
+            <input name="email" type="email" class="form-control" placeholder="user@example.com" required />
+        </div>
+        <div class="col-md-4">
+            <input name="roleName" class="form-control" placeholder="Role name" required />
+        </div>
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary w-100">Assign</button>
+        </div>
+    </div>
+</form>
+
+<a asp-action="DataManagement" class="btn btn-secondary">Back to Dashboard</a>

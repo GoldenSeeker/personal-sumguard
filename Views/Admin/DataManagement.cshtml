@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Admin — Data Management";
+}
+
+<h2>Data Management Dashboard</h2>
+
+@if (TempData["CleanupResult"] != null)
+{
+    <div class="alert alert-success">@TempData["CleanupResult"]</div>
+}
+
+<div class="row mb-4">
+    <div class="col-md-3"><div class="card p-3"><strong>Drafts</strong><br /><span class="fs-4">@ViewBag.TotalDrafts</span></div></div>
+    <div class="col-md-3"><div class="card p-3"><strong>Unshared Drafts</strong><br /><span class="fs-4">@ViewBag.UnsharedDrafts</span></div></div>
+    <div class="col-md-3"><div class="card p-3"><strong>Comments</strong><br /><span class="fs-4">@ViewBag.TotalComments</span></div></div>
+    <div class="col-md-3"><div class="card p-3"><strong>Unread Notifications</strong><br /><span class="fs-4">@ViewBag.UnreadNotifications</span></div></div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6"><div class="card p-3"><strong>Users</strong><br /><span class="fs-4">@ViewBag.TotalUsers</span></div></div>
+    <div class="col-md-6"><div class="card p-3"><strong>Roles</strong><br /><span class="fs-4">@ViewBag.TotalRoles</span></div></div>
+</div>
+
+<form asp-action="RunCleanup" method="post" class="mb-4">
+    <button type="submit" class="btn btn-warning">Run Cleanup Now</button>
+    <span class="text-muted">Deletes notifications that are read and older than 30 days.</span>
+</form>
+
+<a asp-action="Roles" class="btn btn-outline-primary">Manage Roles</a>
