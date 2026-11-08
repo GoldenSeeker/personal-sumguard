@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Log In";
+    var returnUrl = ViewBag.ReturnUrl as string;
+}
+
+<h2>Log In</h2>
+
+<form asp-action="Login" method="post">
+    <input type="hidden" name="returnUrl" value="@returnUrl" />
+
+    <div class="form-group mb-3">
+        <label class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" required />
+    </div>
+
+    <div class="form-group mb-3">
+        <label class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" required />
+    </div>
+
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+    <button type="submit" class="btn btn-primary">Log In</button>
+</form>
