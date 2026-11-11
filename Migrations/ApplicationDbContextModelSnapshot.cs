@@ -308,7 +308,21 @@ namespace Personal_Sumguard.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime?>("ClassificationDate")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Description")
+                        .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FirmName")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("PostedDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProductDescription")
                         .HasMaxLength(1000)
                         .HasColumnType("TEXT");
 
@@ -317,12 +331,27 @@ namespace Personal_Sumguard.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("RecallClass")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("RecallDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("RecallNumber")
                         .IsRequired()
                         .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RecallReason")
+                        .HasMaxLength(1000)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("TerminationDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TradeName")
+                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

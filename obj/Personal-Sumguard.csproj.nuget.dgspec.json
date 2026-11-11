@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj": {}
+    "C:\\Users\\Adeye\\Developer\\personal-sumguard\\Personal-Sumguard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj": {
+    "C:\\Users\\Adeye\\Developer\\personal-sumguard\\Personal-Sumguard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj",
+        "projectUniqueName": "C:\\Users\\Adeye\\Developer\\personal-sumguard\\Personal-Sumguard.csproj",
         "projectName": "Personal-Sumguard",
-        "projectPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\Personal-Sumguard.csproj",
+        "projectPath": "C:\\Users\\Adeye\\Developer\\personal-sumguard\\Personal-Sumguard.csproj",
         "packagesPath": "C:\\Users\\Adeye\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adeye\\Developer\\Personal-Sumguard\\obj\\",
+        "outputPath": "C:\\Users\\Adeye\\Developer\\personal-sumguard\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Adeye\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,6 +48,10 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.105.1, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[10.0.14, )"

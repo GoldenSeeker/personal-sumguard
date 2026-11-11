@@ -20,101 +20,101 @@ build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = Personal_Sumguard
 build_property.RootNamespace = Personal_Sumguard
-build_property.ProjectDir = C:\Users\Adeye\Developer\Personal-Sumguard\
+build_property.ProjectDir = C:\Users\Adeye\Developer\personal-sumguard\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Adeye\Developer\Personal-Sumguard
+build_property.MSBuildProjectDirectory = C:\Users\Adeye\Developer\personal-sumguard
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Account/Login.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Account/Register.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Admin/DataManagement.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Admin/DataManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGF0YU1hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Admin/Roles.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Admin/Roles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUm9sZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/CustomerPortal/Details.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/CustomerPortal/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJQb3J0YWxcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/CustomerPortal/EnterEmail.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/CustomerPortal/EnterEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJQb3J0YWxcRW50ZXJFbWFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/CustomerPortal/Index.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/CustomerPortal/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJQb3J0YWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Home/Index.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Home/Privacy.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Notification/Index.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Notification/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Notification/Invite.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Notification/Invite.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uXEludml0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Notification/InviteResult.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Notification/InviteResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uXEludml0ZVJlc3VsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Recall/Search.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Recall/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjYWxsXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Review/AttachRecord.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Review/AttachRecord.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEF0dGFjaFJlY29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Review/CreateDraft.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Review/CreateDraft.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XENyZWF0ZURyYWZ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Review/Index.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Review/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Review/ShareReview.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Review/ShareReview.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XFNoYXJlUmV2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Shared/Error.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/_ViewImports.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/_ViewStart.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Adeye/Developer/Personal-Sumguard/Views/Shared/_Layout.cshtml]
+[C:/Users/Adeye/Developer/personal-sumguard/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-34yuiwab8g
